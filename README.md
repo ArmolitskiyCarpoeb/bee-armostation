@@ -1,108 +1,73 @@
-<h1 align="center">BeeStation 13 Codebase</h1>
+<h1 align="center">Armostation: Bee edit</h1>
+
+![Discord Banner 2](https://discordapp.com/api/guilds/1001501115000561774/widget.png?style=banner2)
+
+[![forinfinityndbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+
+**Конфа:** https://discord.gg/PtSFnEnTRR
+**Кодовая база:** https://github.com/ArmolitskiyCarpoeb/bee-armostation
+**Вики (англ.):** https://wiki.beestation13.com/view/Main_Page
 
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
-[![Build Status](https://github.com/BeeStation/BeeStation-Hornet/workflows/Run%20tests/badge.svg)](https://github.com/BeeStation/BeeStation-Hornet/actions?query=workflow%3A%22Run+tests%22)
-![Open Issues](https://isitmaintained.com/badge/open/BeeStation/BeeStation-Hornet.svg)
+## СКАЧАТЬ
 
-**Website:** http://beestation13.com
-**Code:** https://github.com/beestation/beestation-hornet
-**Wiki:** https://wiki.beestation13.com/view/Main_Page
+Для сосунков: https://github.com/ArmolitskiyCarpoeb/bee-armostation/archive/refs/heads/master.zip
+Для продвинутых: Клонируете репозиторий https://github.com/ArmolitskiyCarpoeb/bee-armostation.git
 
+## УСТАНОВКА
 
-## DOWNLOADING
+**Для компиляции (установки) необходим Dream Maker**.
 
-There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at https://wiki.beestation13.com/view/Downloading_the_source_code
+**Компиляция в самом Dream Maker не рекомендуется так как это не скомпилирует TGUI**, ну и ты получишь ошибку типа `'tgui.bundle.js': cannot find file`.
 
-Option 1:
-Follow this: https://wiki.beestation13.com/view/Setting_up_git
-
-Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/beestation/beestation-hornet
-(note: this will use a lot of bandwidth if you wish to update and is a lot of
-hassle if you want to make any changes at all, so it's not recommended.)
-
-Option 3: Use our docker image that tracks the master branch (See commits for build status. Again, same caveats as option 2)
-
-```
-docker run -d -p <your port>:1337 -v /path/to/your/config:/beestation/config -v /path/to/your/data:/beestation/data beestation/beestation <dream daemon options i.e. -public or -params>
-```
-
-## INSTALLATION
-
-**You can no longer compile the codebase simply through Dream Maker**.
-
-**Building Beestation in Dream Maker directly is now deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
-
-### Building with VSCode (Preferred)
+### Компиляция через VSCode (Рекомендуется)
 
 **[How to compile in VSCode and other build options](tools/build/README.md).**
 
-### Building without VSCode
-You will find `BUILD.bat` in the root folder of BeeStation, double-clicking it will initiate the build. It consists of multiple steps and might take around 1-5 minutes to compile (particularly the first time). Unix users can directly call ./tools/build/build.
+### Компиляция без VSCode
+Открываешь `BUILD.bat`в корне и ждёшь до 5 минут, готово. Для линуксойдов запускаешь  `./tools/build/build` находясь в корне билда.
 
-If you see any errors or warnings, something has gone wrong - possibly a corrupt
-download or the files extracted wrong. If problems persist, ask for assistance
-in https://discord.gg/Vh8TJp9 or https://discord.gg/z9ttAvA
+Если ты видишь ошибки при компиляции то
+1. Ты обосрался и тебе надо перекачать файлы заного или скачать tgui у друга и скопировать в корень билда
+2. Обосрался кодер - идёшь в конфу и ноешь какие кодеры пидорасы
+3. Обосрались кодеры beestation - тут идёшь в https://discord.gg/Vh8TJp9 или https://discord.gg/z9ttAvA и ноешь на английском о проблеме
 
-Once that's done, open up the config folder. You'll want to edit config.txt to
-set the probabilities for different gamemodes in Secret and to set your server
-location so that all your players don't get disconnected at the end of each
-round. It's recommended you don't turn on the gamemodes with probability 0,
-except Extended, as they have various issues and aren't currently being tested,
-so they may have unknown and bizarre bugs. Extended is essentially no mode, and
-isn't in the Secret rotation by default as it's just not very fun.
+Как всё скомпилируется и файл будет готов к запуску, идёшь в config/config.txt и настраиваешь всё что тебе надо .Рекомендую потыкать ротацию режимов при игроках и поставить айпи сервера чтоб игроки не переподключались после отключения от сервера. Не рекомендую тыкать режимы у которых стоит 0 кроме Экстендед, так как в них могут быть различные ошибки от которых серверу будет не хорошо. Экста по сути не является режимом по умолчанию и не входит в ротацию потому что всем в первые 20 минут надоедает играть в работку.
 
-You'll also want to edit config/admins.txt to remove the default admins and add
-your own. "Game Master" is the highest level of access, and probably the one
-you'll want to use for now. You can set up your own ranks and find out more in
-config/admin_ranks.txt
+Ещё рекомендую потыкать config/admins.txt, чтоб убрать пендоских транспидоров и добавить русских гигачадов. Свои ранги можно настроить в config/admin_ranks.txt.
 
-The format is
+Собственно в admins.txt всё должно выглядеть так
 
 ```
-byondkey = Rank
+ckey_primer_raz = Rank_raz
+ckey_primer_dva = Rank_dva
 ```
 
-where the admin rank must be properly capitalised.
+Сикей с маленькой буквы, ранг с соблюдением больших и маленьких букв, затем если надо ещё добавить педаль то пишешь с новой строки как в примере выше.
 
-This codebase also depends on a native library called rust-g. A precompiled
-Windows DLL is included in this repository, but Linux users will need to build
-and install it themselves. Directions can be found at the [rust-g
-repo](https://github.com/tgstation/rust-g).
+Этот код заколдован библиотекой rust-g. Для пользователей Окон .dll библиотека уже скомпилирована и лежит в коде, для Линухойдов надо качать библиотеку самим. Всё можно найти [тут](https://github.com/tgstation/rust-g).
 
-Finally, to start the server, run Dream Daemon and enter the path to your
-compiled beestation.dmb file. Make sure to set the port to the one you
-specified in the config.txt, and set the Security box to 'Safe'. Then press GO
-and the server should start up and be ready to join. It is also recommended that
-you set up the SQL backend (see below).
+Итак, после проделаных манипуляций вы хотите запустить сервер, верно? Значит открываете Dream Daemon и вводите путь до beestation.dmb. Ставишь порт как указано в config.txt, и ставишь в кнопке "Security" значение "Safe". Затем нажимаешь GO и ждёшь загрузки. Если ты запускаешь не локалку для тестов то тебе стоит настроить SQL (см. ниже).
 
-## UPDATING
+## ОБНОВЛЕНИЕ
 
-Just use git, or see the following subsection.
+Если ты скачивал через git то обновляешься через ПО которым ты качал билд или же читаешь что написано ниже.
 
-### Manual Update
+### Мануал по обновлению вручную
 
-To update an existing installation, first back up your /config and /data folders
-as these store your server configuration, player preferences and banlist.
+Чтобы обновить билд, стоит сделать резервную копию папок /config и /data, так как в них хранится конфигурация вашего сервера, настройки игроков и список банов.
 
-Then, extract the new files (preferably into a clean directory, but updating in
-place should work fine), copy your /config and /data folders back into the new
-install, overwriting when prompted except if we've specified otherwise, and
-recompile the game.  Once you start the server up again, you should be running
-the new version.
+Вытаскиваешь новые файлы (желательно в пустую папку, но обновление на месте должно работать нормально), копируешь папки /config и /data обратно как закончил обновляться, перезаписав их при появлении запроса, если не указано иное, и компилируешь билд. Once you start the server up again, you should be running the new version.
 
-## HOSTING
+## ХОСТИНГ
 
-Hosting requires the [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=52685). Specifically,
-`vc_redist.x86.exe`. *Not* the 64-bit version. There is a decent chance you already have it if you've installed a game on Steam.
+Для хостинга требуется [распространяемый пакет Microsoft Visual C++ 2015](https://www.microsoft.com/en-us/download/details.aspx?id=52685). В частности, `vc_redist.x86.exe`. *Не* 64-битная версия. Если ты ставил игру то она у тебя уже должна быть но лучше скачай и установи.
 
-If you'd like a more robust server hosting option, check out tgstation's server tools suite at
-https://github.com/tgstation/tgstation-server
+Если тебе надо управлять сервером не находясь на самом сервере или далеко от хоста то возможно тебе стоит посмотреть это https://github.com/tgstation/tgstation-server.
 
-## MAPS
+## КАРТЫ
 
-BeeStation currently comes equipped with these maps.
+Оригинальная пчелостанция имеет в наличии следующие карты
 
 * [BoxStation](https://wiki.beestation13.com/view/Boxstation)
 * [CorgStation](https://wiki.beestation13.com/view/CorgsStation)
@@ -113,68 +78,64 @@ BeeStation currently comes equipped with these maps.
 * [PubbyStation](https://wiki.beestation13.com/view/PubbyStation)
 * [RuntimeStation (used for debugging)](https://wiki.beestation13.com/view/RuntimeStation)
 
-All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
+Все карты имеют свой код в формате .dm и .json которые находятся в папке _maps. Карты загружаются при запуске сервера. Следуя этому руководству ты не обосрёшь свои руки и кодеры с маперами не придут ночью и не выебут тебя нахуй.
 
-The map that will be loaded for the upcoming round is determined by reading data/next_map.json, which is a copy of the json files found in the _maps tree. If this file does not exist, the default map from config/maps.txt will be loaded. Failing that, BoxStation will be loaded. If you want to set a specific map to load next round you can use the Change Map verb in game before restarting the server or copy a json from _maps to data/next_map.json before starting the server. Also, for debugging purposes, ticking a corresponding map's code file in Dream Maker will force that map to load every round.
+Карта которая будет загружена при запуске сервера или в следующем раунде находится в data/next_map.json, которая по сути является копией json в _maps. Если же файла нет то загружается карта выбраная в config/maps.txt. Ну а если и этого файла нет или же нету выбраной карты в файле то будет загружена BoxStation. Если ты хочешь выбрать карту находясь в игре то жми на "Server - Change Map" или копируешь json карты из _maps в или вместо data/next_map.json перед запуском сервера. Ну и можешь в качестве отладки отметить его в Dream Maker и эта карта будет запускаться каждый раунд.
 
-If you are hosting a server, and want randomly picked maps to be played each round, you can enable map rotation in [config.txt](config/config.txt) and then set the maps to be picked in the [maps.txt](config/maps.txt) file.
+Если ты ставишь сервер и хочешь чтобы была рандомная ротация карт, то включаешь данную опцию в [config.txt](config/config.txt), а затем указываешь какие карты надо запускать в [maps.txt](config/maps.txt).
 
-Anytime you want to make changes to a map it's imperative you use the [Map Merging tools](https://wiki.beestation13.com/view/Map_Merger)
+Если ты не используешь StrongDMM то тебе придётся использовать [инструмент для сборки карты](https://wiki.beestation13.com/view/Map_Merger).
 
-## AWAY MISSIONS
+## АВЕЙКИ ИЛИ ГЕЙТВЕЙ КАРТЫ
 
-BeeStation supports loading away missions however they are disabled by default.
+Пчелостанция поддерживает загрузку авеек но по умолчанию они отключены.
 
-Map files for away missions are located in the _maps/RandomZLevels directory. Each away mission includes it's own code definitions located in /code/modules/awaymissions/mission_code. These files must be included and compiled with the server beforehand otherwise the server will crash upon trying to load away missions that lack their code.
+Карты авеек находятся в _maps/RandomZLevels. Каждая авейка имеет свой код который находится в /code/modules/awaymissions/mission_code. Эти файлы должны быть включены и скомпилированы иначе сервер крашнется при попытке запустить их.
 
-To enable an away mission open `config/awaymissionconfig.txt` and uncomment one of the .dmm lines by removing the #. If more than one away mission is uncommented then the away mission loader will randomly select one the enabled ones to load.
+Чтоб включить авэйку тебе придётся открыть config/awaymissionconfig.txt и раскоментировать (убрать #) или добавить строку с .dmm. Если раскоментировано более одной миссии то рандомизатор высрет в гейтвей рандомную авейку.
 
-## SQL SETUP
+## SQL БАЗА ДАННЫХ
 
-The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/beestation_schema.sql and /SQL/beestation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: https://wiki.beestation13.com/view/Downloading_the_source_code#Setting_up_the_database
+Для SQL требуется Mariadb версией 10.2 или более поздней. Mysql не поддерживается. SQL нужна что-бы сохранять высер что пишут игроки в библиотеке, сбора статистики, внутреннего магазина, нотесов админов и банов ну и ещё прочей хуйни. Данные для доступа к Mariadb вписывать в /config/dbconfig.txt, схема SQL находится в /SQL/beestation_schema.sql и /SQL/beestation_schema_prefix.sql в зависимости от того нужны ли тебе префиксы таблиц. Подробнее: https://wiki.beestation13.com/view/Downloading_the_source_code#Setting_up_the_database.
 
-If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: https://tgstation13.download/database/ Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
+Если ты тестишь базу данных на Windows, то ты можешь использовать автономную версию предварительной загрузки MariaDB с пустой (но инициализированным) базой данных tgdb. Всё находится тут: https://tgstation13.download/database/ Просто разархивируй и запустити рабочий (но небезопасный) сервер базы данных. Включает заархивированную копию папки данных для легкого сброса до исходного состояния.
 
-## WEB/CDN RESOURCE DELIVERY
+## WEB/CDN РЕСУРСНИК
 
-Web delivery of game resources makes it quicker for players to join and reduces some of the stress on the game server.
+Хранилище игровых ресурсов ускоряет присоединение игроков и снижает нагрузку на игровой сервер.
 
-1. Edit compile_options.dm to set the `PRELOAD_RSC` define to `0`
-1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
-    * If you keep up to date with BeeStation you could reuse our rsc cdn at http://rsc.beestation13.buzz/beestation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
-	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
+1. В compile_options.dm to ставишь после `PRELOAD_RSC` цифру `0` вместо других
+1. Добавляешь ссылку в config/external_rsc_urls которая указывает на .zip архив с .rsc файлом внутри.
+    * Оригинальный бистейшовый .rsc находится в http://rsc.beestation13.buzz/beestation.zip. Если сервер не оригинальный (а у нас он не оригинальный) то можно использовать службы cdn, такие как CDN77 или cloudflare (только там ещё надо добавить в page rule кэширование что-бы zip архив кэшировался), или ты можешь создать свой cdn, используя провайдеров route 53 и vps.
+	* Несмотря на это, даже выгрузка rsc на веб-сайт без CDN будет значительным ускорением загрузки нежели загрузка с самого игрового сервера rsc файла.
 
-## IRC BOT SETUP
+## IRC БОТОВОДСТВО
 
-Included in the repository is a python3 compatible IRC bot capable of relaying adminhelps to a specified
-IRC channel/server, see the /tools/minibot folder for more
+В репозиторий включен IRC-бот, работающий на python3 который передаёт ахелпы на указанный IRC-канал/сервер. Дополнительные сведения см. в папке /tools/minibot.
 
-## CONTRIBUTING
+## ПОМОЩЬ
 
-Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+Смотри [CONTRIBUTING.md (англ.)](.github/CONTRIBUTING.md)
 
-## LICENSE
+## ЛИЦЕНЗИЯ
 
-All code after [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html).
+Весь код после [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) находится под лицензией [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html).
 
-All code before [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
-(Including tools unless their readme specifies otherwise.)
+Весь код до [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) находится под лицензией [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
+(Включая инструменты, если в их файле readme не указано иное.)
 
-See LICENSE and GPLv3.txt for more details.
+Смотри LICENSE и GPLv3.txt для подробностей.
 
-tgui clientside is licensed as a subproject under the MIT license.
-Font Awesome font files, used by tgui, are licensed under the SIL Open Font License v1.1
-tgui assets are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
-The TGS3 API is licensed as a subproject under the MIT license.
+Клиентская часть tgui лицензируется как подпроект по лицензии MIT. Файлы шрифтов Font Awesome, используемые tgui, лицензируются в соответствии с лицензией SIL Open Font License v1.1. Ресурсы tgui лицензируются в соответствии с [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/ 4.0/). API TGS3 лицензируется как подпроект по лицензии MIT.
 
-See tgui/LICENSE.md for the MIT license.
-See tgui/assets/fonts/SIL-OFL-1.1-LICENSE.md for the SIL Open Font License.
-See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools/st\_commands.dm, and code/modules/server\_tools/st\_inteface.dm for the MIT license.
+Смотри tgui/LICENSE.md что-бы прочитать MIT лицензию.
+Смотри tgui/assets/fonts/SIL-OFL-1.1-LICENSE.md что-бы прочитать SIL Open Font License.
+См. нижние колонтитулы code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools/st\_commands.dm, и code/modules/server\_tools/st\_inteface.dm for что-бы прочитать MIT license.
 
-All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
+Все активы, включая значки и звук, находятся под лицензией [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) если не указано другое.
 
-# Other Codebase Credits
-- /tg/, for the codebase.
-- CEV Eris, for the PDA sprites
-- TGMC, for the custom keybinds base
-- Citadel, for their beautiful lighting
+# Остальные разработчики
+- /tg/, у них мы взяли основной код.
+- CEV Eris, спасибо за спрайты ПДА.
+- TGMC, код биндов для клавиш.
+- Citadel, за красивое освещение.
