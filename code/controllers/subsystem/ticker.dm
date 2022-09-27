@@ -257,7 +257,7 @@ SUBSYSTEM_DEF(ticker)
 	if(GLOB.master_mode == "random" || GLOB.master_mode == "secret")
 		runnable_modes = config.get_runnable_modes()
 
-		if(GLOB.master_mode == "secret" || GLOB.master_mode == "secret_extended")
+		if(GLOB.master_mode == "secret" || GLOB.master_mode == "secret_extended" || GLOB.master_mode == "teaparty")
 			hide_mode = TRUE
 			if(GLOB.secret_force_mode != "secret")
 				var/datum/game_mode/smode = config.pick_mode(GLOB.secret_force_mode)
