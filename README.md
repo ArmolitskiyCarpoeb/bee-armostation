@@ -126,7 +126,7 @@ ckey_primer_dva = Rank_dva
 
 Смотри LICENSE и GPLv3.txt для подробностей.
 
-Клиентская часть tgui лицензируется как подпроект по лицензии MIT. Файлы шрифтов Font Awesome, используемые tgui, лицензируются в соответствии с лицензией SIL Open Font License v1.1. Ресурсы tgui лицензируются в соответствии с [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/ 4.0/). API TGS3 лицензируется как подпроект по лицензии MIT.
+Клиентская часть tgui лицензируется как подпроект по лицензии MIT. Файлы шрифтов Font Awesome, используемые tgui, лицензируются в соответствии с лицензией SIL Open Font License v1.1. Ресурсы tgui лицензируются в соответствии с [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). API TGS3 лицензируется как подпроект по лицензии MIT.
 
 Смотри tgui/LICENSE.md что-бы прочитать MIT лицензию.
 Смотри tgui/assets/fonts/SIL-OFL-1.1-LICENSE.md что-бы прочитать SIL Open Font License.
