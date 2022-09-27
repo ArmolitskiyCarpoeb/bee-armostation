@@ -183,3 +183,5 @@ Temporary Items
 
 # Ignore config (rename config_example in config you dumbass)
 /config/**/*
+/config
+/config/*
