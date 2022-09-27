@@ -98,3 +98,10 @@
 
 //Used in visible_message_flags, audible_message_flags and message_mods
 #define CHATMESSAGE_EMOTE "emotemessage"
+
+//Дефайны для работы падежей
+#define RODITELNI  1
+#define DATELNI    2
+#define VINITELNI  3
+#define TVORITELNI 4
+#define PREDLOZHNI 5
