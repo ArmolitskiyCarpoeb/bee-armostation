@@ -3556,6 +3556,8 @@
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"
 #include "w_armo\code\_globalvars\text.dm"
+#include "w_armo\code\objects\items\grenades\chem_grenade.dm"
+#include "w_armo\code\objects\items\storage\boxes.dm"
 #include "w_armo\code\serverside\crawler.dm"
 #include "w_armo\code\serverside\padezhi.dm"
 #include "w_armo\code\serverside\pronouns_ru.dm"
