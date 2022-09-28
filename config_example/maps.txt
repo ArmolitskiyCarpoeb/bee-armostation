@@ -27,7 +27,7 @@ map boxstation
 endmap
 
 map metastation
-	default
+	maxplayers 50
 	votable
 endmap
 
@@ -63,5 +63,13 @@ map runtimestation
 endmap
 
 map multiz_debug
+	disabled
+endmap
+
+#WIP Maps
+
+# Башенка - 10-ти этажный пиздец который ещё портирован криво
+# Что надо сделать: портировать код лифта для 10 этажей, домапить карту, прикрутить спавнеры набегаторов
+map Bashenka
 	disabled
 endmap
