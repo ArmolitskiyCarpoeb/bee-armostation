@@ -6,13 +6,13 @@
             if(EMERGENCY_ESCAPED_OR_ENDGAMED)
                 if(!M.onCentCom() && !M.onSyndieBase())
                     var/reward_type = ((isAI(M)|| iscyborg(M) ? METACOIN_ESCAPE_REWARD : METACOIN_SURVIVE_REWARD))
-                    inc_metabalance(reward_type, reason="Survived the shift.")
+                    inc_metabalance(reward_type, reason="Выжил.")
                 else
-                    inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift and escaped!")
+                    inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Выжил и эвакуировался!")
             else
-                inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift.")
+                inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Эвакуировался.")
         else
-            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="You tried.")
+            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="Не смог выжить.")
 
 /client/proc/process_greentext()
 	src.give_award(/datum/award/achievement/misc/greentext, src.mob)
@@ -54,6 +54,6 @@
 	qdel(query_inc_metacoins)
 	if(ann)
 		if(reason)
-			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 0 ? "deposited to" : "withdrawn from"] your account! Reason: [reason]</span>")
+			to_chat(src, "<span class='rose bold'>[mc_count >= 0 ? "Начислено" : "Отобрано"] [abs(mc_count)] [skloname(CONFIG_GET(string/metacurrency_name), RODITELNI, "male")]! Причина: [reason]</span>")
 		else
-			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 0 ? "deposited to" : "withdrawn from"] your account!</span>")
+			to_chat(src, "<span class='rose bold'>[mc_count >= 0 ? "Начислено" : "Отобрано"] [abs(mc_count)] [skloname(CONFIG_GET(string/metacurrency_name), RODITELNI, "male")]!</span>")

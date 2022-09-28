@@ -523,7 +523,7 @@
 /datum/config_entry/flag/reopen_roundstart_suicide_roles_command_report
 
 /datum/config_entry/string/metacurrency_name
-	config_entry_value = "MetaCoin"
+	config_entry_value = "Шекель"
 
 /datum/config_entry/flag/grant_metacurrency
 
