@@ -176,3 +176,8 @@ GLOBAL_LIST_INIT(ddlc_chars, list(
 	"ŭ", "Ů", "ů", "Ű", "ű", "Ų", "ų",
 	"Ŵ", "ŵ", "Ŷ", "ŷ", "Ÿ", "Ź", "ź",
 	"Ż", "ż", "Ž", "ž"))
+
+/proc/r_json_decode(text) //now I'm stupid
+	for(var/s in GLOB.rus_unicode_conversion_hex)
+		text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", s)
+	return json_decode(text)

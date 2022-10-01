@@ -41,3 +41,6 @@ GLOBAL_LIST_EMPTY(topic_tokens)
 GLOBAL_PROTECT(topic_tokens)
 GLOBAL_LIST_EMPTY(topic_servers)
 GLOBAL_PROTECT(topic_servers)
+
+//shitcode goes here
+GLOBAL_VAR_INIT(remote_control, TRUE)
